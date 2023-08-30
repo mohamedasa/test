@@ -38,6 +38,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  List arr=[0, 1, 21, 33, 45, 45, 45, 45, 45, 45,61,71,73];
+  int x = 45;
+
+  void findFirstAndLast(arr,  x)
+  {
+  int n = arr.length;
+  int first = -1, last = -1;
+  for (int i = 0; i < n; i++) {
+  if (x != arr[i])
+  continue;
+  if (first == -1)
+  first = i;
+  last = i;
+  }
+  if (first != -1) {
+  // print("First Occurrence = $first");
+  // print("Last Occurrence = $last");
+  print( '[''$first'',''$last'']');
+  }
+  else
+  print('[''-1'',''-1'']');
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    findFirstAndLast(arr, x);
+  }
   @override
   Widget build(BuildContext context) {
 
